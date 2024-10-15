@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import ProtectedRoute from "./routes/ProtectedRoutes.jsx";
 import { fallbackText } from "./utils/constants.utils.js";
+import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner.components.jsx";
 
 const AdminPage = lazy(() => import("./pages/AdminPage.pages.jsx"));
 const EditorPage = lazy(() => import("./pages/EditorPage.pages.jsx"));
@@ -22,7 +23,7 @@ const App = () => {
     {
       path: "/",
       element: (
-        <Suspense fallback={<div>{fallbackText}</div>}>
+        <Suspense fallback={<LoadingSpinner />}>
           <Layout />
         </Suspense>
       ),
@@ -30,7 +31,7 @@ const App = () => {
         {
           index: true,
           element: (
-            <Suspense fallback={<div>{fallbackText}</div>}>
+            <Suspense fallback={<LoadingSpinner />}>
               <HomePage />
             </Suspense>
           ),
@@ -38,7 +39,7 @@ const App = () => {
         {
           path: "admin",
           element: (
-            <Suspense fallback={<div>{fallbackText}</div>}>
+            <Suspense fallback={<LoadingSpinner />}>
               <ProtectedRoute role={role} allowedRoles={["Admin"]}>
                 <AdminPage />
               </ProtectedRoute>
@@ -48,7 +49,7 @@ const App = () => {
         {
           path: "editor",
           element: (
-            <Suspense fallback={<div>{fallbackText}</div>}>
+            <Suspense fallback={<LoadingSpinner />}>
               <ProtectedRoute role={role} allowedRoles={["Editor"]}>
                 <EditorPage />
               </ProtectedRoute>
@@ -58,7 +59,7 @@ const App = () => {
         {
           path: "viewer",
           element: (
-            <Suspense fallback={<div>{fallbackText}</div>}>
+            <Suspense fallback={<LoadingSpinner />}>
               <ProtectedRoute
                 role={role}
                 allowedRoles={["Viewer", "Admin", "Editor"]}
@@ -71,7 +72,7 @@ const App = () => {
         {
           path: "unauthorized",
           element: (
-            <Suspense fallback={<div>{fallbackText}</div>}>
+            <Suspense fallback={<LoadingSpinner />}>
               <UnauthorizedAccess />
             </Suspense>
           ),
@@ -79,7 +80,7 @@ const App = () => {
         {
           path: "*",
           element: (
-            <Suspense fallback={<div>{fallbackText}</div>}>
+            <Suspense fallback={<LoadingSpinner />}>
               <PageNotFound />
             </Suspense>
           ),
