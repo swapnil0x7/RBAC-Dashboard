@@ -1,24 +1,19 @@
+/* General Styles */
 .navbar__container {
-  height: 12%;
+  height: auto;
   width: 100%;
   background-color: black;
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px;
+  padding: 20px;
+  flex-wrap: wrap; /* Ensures items wrap on smaller screens */
 }
 
-.left__container .right__container {
-  height: 10px;
-  background-color: white;
-  border: 1px solid white;
-  margin: 5px;
-}
-
-.left__container {
+.left__container,
+.right__container {
   display: flex;
-  gap: 2rem;
   align-items: center;
 }
 
@@ -28,20 +23,17 @@
 }
 
 .right__container {
-  display: flex;
   gap: 0.75rem;
 }
 
 .nav-link {
   display: block;
-  height: 2rem;
-  width: 4rem;
   text-decoration: none;
   color: rgb(187, 186, 186);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 10px;
+  text-align: center;
   font-weight: 600;
+  font-size: 1rem;
 }
 
 .nav-link:hover {
@@ -53,7 +45,39 @@
 }
 
 .logo {
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   cursor: pointer;
+}
+
+/* Mobile-First Design */
+@media only screen and (max-width: 600px) {
+  .navbar__container {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align to the left */
+  }
+
+  .left__container {
+    width: 100%;
+    justify-content: space-between; /* Logo on one side, buttons on the other */
+    padding-bottom: 10px;
+  }
+
+  .left__btn__container {
+    gap: 0.5rem;
+  }
+
+  .right__container {
+    display: flex;
+    flex-direction: row; /* Stack links vertically */
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-link {
+    width: 100%; /* Full width links */
+    padding: 15px 10px; /* Make them easier to tap */
+    text-align: center;
+  }
 }
