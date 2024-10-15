@@ -57,6 +57,12 @@ body {
   text-align: center;
 }
 
+.section h1 {
+  padding: 1rem 5px;
+  font-size: larger;
+  text-align: center;
+}
+
 .navigate {
   text-decoration: none;
   font-weight: 600;
