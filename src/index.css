@@ -1,0 +1,74 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: rgb(8, 14, 24);
+  color: white;
+}
+
+.dashboard {
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  padding: 20px;
+  background-color: black;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.section {
+  margin-top: 5rem;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section p {
+  margin-top: 1rem;
+  padding: 1rem 5px;
+  font-size: larger;
+  text-align: center;
+}
+
+.navigate {
+  text-decoration: none;
+  font-weight: 600;
+  color: lightgreen;
+}
+
+.navigate:hover {
+  text-decoration: underline;
+}
+
+.outlet {
+  background-color: rgb(8, 14, 24);
+  flex: 1;
+  padding: 20px;
+}

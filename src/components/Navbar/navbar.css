@@ -1,0 +1,59 @@
+.navbar__container {
+  height: 12%;
+  width: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.left__container .right__container {
+  height: 10px;
+  background-color: white;
+  border: 1px solid white;
+  margin: 5px;
+}
+
+.left__container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.left__btn__container {
+  display: flex;
+  gap: 1rem;
+}
+
+.right__container {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.nav-link {
+  display: block;
+  height: 2rem;
+  width: 4rem;
+  text-decoration: none;
+  color: rgb(187, 186, 186);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.nav-link.active {
+  color: white;
+}
+
+.logo {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
